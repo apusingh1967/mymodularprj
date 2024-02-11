@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.6.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group = 'com.apu.app'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(path: ':com.apu.lib')
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.4'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+bootJar {
+    archiveFileName = 'com.apu.myapp.jar'
+    mainClass = 'com.apu.app.Main'
+}
